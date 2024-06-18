@@ -1,0 +1,175 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    position: relative;
+    background: transparent;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    background: #010e1b;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: -1;
+}
+
+.portfolio-section {
+    text-align: left;
+    margin-left: 200px; /* Adjust this value to add more margin from the left */
+    max-width: 800px; /* Set maximum width */
+    width: 100%; /* Ensure it takes full width on smaller screens */
+    padding: 0 20px; /* Add padding for smaller screens */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    flex-grow: 1; /* Allow the portfolio section to grow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+}
+
+.portfolio-section h1 {
+    margin-bottom: 20px;
+    font-size: 3em; /* Increase font size of the name */
+    font-family: 'Roboto', sans-serif; /* Update font family for the name */
+}
+
+.typewriter-container {
+    display: flex;
+    flex-direction: column; /* Display typewriter line in column */
+    align-items: flex-start;
+    position: relative;
+}
+
+.typewriter-line {
+    display: flex;
+    align-items: center;
+}
+
+.typewriter-prefix {
+    font-size: 1.5em; /* Increase font size of "I am" */
+    color: #fff; /* White color for the prefix */
+}
+
+.typewriter-text {
+    overflow: hidden; /* Ensures the text is hidden until it's animated in */
+    white-space: nowrap; /* Ensures the text does not wrap */
+    margin-left: 10px; /* Adjust margin to align "I am" with the typewriter text */
+    letter-spacing: .15em; /* Adds a bit of spacing between letters */
+    font-size: 1.5em; /* Increase font size of the typewriter text */
+    position: relative; /* Allows us to position the cursor */
+    color: green; /* Green color for the typewriter text */
+}
+
+.typewriter-text::after {
+    content: '|'; /* Cursor character */
+    position: absolute;
+    top: 0;
+    right: -10px; /* Adjust the position of the cursor */
+    color: yellow; /* Yellow color for the cursor */
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: yellow;
+    }
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px; /* Adds space between icons */
+    padding: 0;
+    margin: 40px 0; /* Adds margin above and below the icons */
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #fff; /* Ensure icons are white to match the text color */
+    font-size: 2em;
+    transition: color 0.3s ease;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons a:hover {
+    color: green;
+}
+
+.contact-button {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.contact-button a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: green;
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+.contact-button a:hover {
+    background-color: #4CAF50;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #010e1b;
+    color: grey; /* Change color to grey */
+    width: 100%;
+    position: relative;
+    margin-top: auto; /* Push footer to the bottom */
+    font-size: 1em; /* Initial font size */
+}
+
+@media (max-width: 768px) {
+    .portfolio-section {
+        margin-left: 20px; /* Adjust margin for smaller screens */
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+    .portfolio-section h1 {
+        font-size: 2.5em; /* Reduce font size of the name for smaller screens */
+    }
+
+    .typewriter-prefix {
+        font-size: 1.2em; /* Reduce font size of "I am" for smaller screens */
+    }
+
+    .typewriter-text {
+        font-size: 1.2em; /* Reduce font size of the typewriter text for smaller screens */
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+        gap: 15px; /* Adjust gap between icons for smaller screens */
+        margin: 20px 0; /* Adjust margin for smaller screens */
+    }
+
+    .social-icons a {
+        font-size: 1.5em; /* Reduce font size of icons for smaller screens */
+    }
+
+    .contact-button {
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        font-size: 0.8em; /* Reduce font size for smaller screens */
+    }
+}
